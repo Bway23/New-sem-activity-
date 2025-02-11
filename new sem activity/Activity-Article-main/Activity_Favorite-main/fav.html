@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leche Flan Article</title>
+    <link rel="stylesheet" href="fav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="article-container">
+        <h1 class="article-header">My favorite dessert, Leche Flan.</h1>
+    </div>
+
+    <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+        <img class="image" src="https://www.onceuponachef.com/images/2019/04/flan.jpg" />
+        <img class="image" src="https://natashaskitchen.com/wp-content/uploads/2023/04/Flan-Recipe-SQ-500x375.jpg" />
+        <img class="image" src="https://w4s8p5t8.rocketcdn.me/wp-content/uploads/2023/10/vegan-flan.jpg" />
+        <img class="image" src="https://images.aws.nestle.recipes/resized/2020_04_29T14_58_37_mrs_ImageRecipes_144670lrg_1080_850.jpg" />
+        <img class="image" src="https://www.thespruceeats.com/thmb/6147TDh9lnN-wtKZEOPrKvTh-P8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/filipino-leche-flan-recipe-3030303-14-5b3fcf0e46e0fb0037948091.jpg" />
+    </div>
+
+    <div class="article-container">
+        <p class="article-info">
+            Leche Flan is, without a doubt, my absolute favorite dessert. Every bite feels like a sweet embrace—smooth, creamy, and utterly indulgent. The rich caramel on top adds a perfect balance of sweetness, creating an irresistible combination that melts in your mouth. What I love most about Leche Flan is its delicate texture. It’s soft yet firm, a custard so silky it seems to glide across your tongue. 
+        </p>
+        <p class="article-info">
+            Each time I take a spoonful, I’m reminded of warmth and comfort, as though it’s a treat meant to be savored slowly, without any rush. There's something magical about how the flavors unfold as you eat it—rich, velvety, and comforting, it has a way of filling you with pure happiness. Whether it’s served during a celebration or as an everyday indulgence, Leche Flan will always hold a special place in my heart.
+        </p>
+    </div>
+
+    <div class="infosvg-container">
+      <div id="info-icon" onclick="showMessage()">
+        ℹ️
+      </div>
+      
+      <svg class="svg-text" viewBox="0 0 150 50">
+        <defs>
+          <linearGradient id="grad1">
+            <stop offset="0%" stop-color="gray" />
+            <stop offset="100%" stop-color="white" />
+          </linearGradient>
+        </defs>
+        <text fill="url(#grad1)" font-size="45" font-family="Verdana" x="20" y="40">BMW</text>
+      </svg>
+    </div>
+  
+    <div id="message" style="display: none;">
+      <p>Click, Hold, Drag and Release the picture to move it. Browser zoom suggestion at 90%</p>
+    </div>
+
+
+<!-- back button -->
+<div class="back-button">
+  <a href="C:\Users\barak\OneDrive\Desktop\combine\Activity-Article-main\Compilation main file\activity.html">
+    <button id="back-button">Back</button>
+  </a>
+</div>
+
+
+    <script>
+      //pop up message
+      function showMessage() {
+        var message = document.getElementById("message");
+        // Toggle the message visibility
+        if (message.style.display === "none") {
+          message.style.display = "block";
+        } else {
+          message.style.display = "none";
+        }
+      }
+      //image tracking, slidex2 haha
+      const track = document.getElementById("image-track");
+
+      const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+      
+      const handleOnUp = () => {
+          track.dataset.mouseDownAt = "0";  
+          track.dataset.prevPercentage = track.dataset.percentage;
+      }
+      
+      const handleOnMove = e => {
+          if(track.dataset.mouseDownAt === "0") return;
+        
+          const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+              maxDelta = window.innerWidth / 2;
+        
+          const percentage = (mouseDelta / maxDelta) * -100,
+              nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+              nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        
+          track.dataset.percentage = nextPercentage;
+        
+          track.animate({
+              transform: `translateX(${nextPercentage}%)`
+          }, { duration: 1200, fill: "forwards" });
+        
+          for(const image of track.getElementsByClassName("image")) {
+              image.animate({
+                  objectPosition: `${100 + nextPercentage}% center`
+              }, { duration: 1200, fill: "forwards" });
+          }
+      }
+      
+      window.onmousedown = e => handleOnDown(e);
+      window.ontouchstart = e => handleOnDown(e.touches[0]);
+      window.onmouseup = e => handleOnUp(e);
+      window.ontouchend = e => handleOnUp(e.touches[0]);
+      window.onmousemove = e => handleOnMove(e);
+      window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+
+    </script>
+</body>
+</html>

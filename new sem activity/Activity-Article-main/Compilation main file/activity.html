@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="article website">
+    <title>My Article Website</title>
+    <link rel="icon" href="favicon2.png" type="image/png"><!-- favicon -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>UNIblog</h1>
+        <p><i>Your uni yapper and friend.</i></p>
+    </header>
+
+    <!-- Menu Button -->
+    <button id="menuBtn" class="menu-btn"><i class="fas fa-bars"></i> Menu</button>
+
+    <!-- Nav Menu -->
+    <nav id="sideMenu" class="side-menu">
+        <ul>
+            <li><a href="#" onclick="showHome()">Home</a></li>
+            <li><a href="#" onclick="showArticle(1)">Article 1</a></li>
+            <li><a href="#" onclick="showArticle(2)">Article 2</a></li>
+            <li><a href="#" onclick="showArticle(3)">Article 3</a></li>
+            <li><a href="#" onclick="showArticle(4)">Article 4</a></li>
+            <li><a href="C:\Users\barak\OneDrive\Desktop\combine\Activity-Article-main\Activity_Favorite-main\fav.html">Article for my Favorite</a></li>
+            <li><a href="C:\Users\barak\OneDrive\Desktop\combine\Activity-Article-main\html-mp3-activity-main\html\mp3.html">Mp3 player</a></li>
+            <li><a href="C:\Users\barak\OneDrive\Desktop\combine\Activity-Article-main\story of my life\sample.html">Newset Activity!</a></li>
+        </ul>
+    </nav>
+ <!-- log in button -->
+    <div class="login-button">
+        <a href="login web.html" class="btn">Log In</a>
+    </div>
+    
+    <!-- Main Section -->
+    <section class="main-content" id="mainContent">
+        <div class="background-image"></div>
+        <div class="overlay">
+            <p></p>
+            <p><br><i>Click the menu button to know more!</i></p>
+        </div>
+    </section>
+
+    <!-- Deets -->
+    <footer>
+        <h3>Contact Us</h3>
+        <ul>
+            <li>Email: Iambryan@gmail.com</li>
+            <li>Phone: 0912345678911</li>
+        </ul>
+        <p>&copy; 2024 Activity Website. For school purposes only.</p>
+    </footer>
+
+    <!-- JS to Toggle Menu and Load Articles -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            sideMenu.style.left = menuOpen ? '-250px' : '0';
+            menuOpen = !menuOpen;
+        });
+
+        function showHome() {
+            const mainContent = document.getElementById('mainContent');
+            mainContent.innerHTML = `
+                <div class="background-image"></div>
+                <div class="overlay">
+                    <p><i>Click the menu button to know more!</i></p>
+                </div>
+            `;
+        }
+
+        const articles = [
+            {
+                title: 'Article 1: The Heart of Our School: The Quadrangle',
+                content: `
+                    <h2>The Heart of Our School: The Quadrangle</h2>
+                    <div class="article-content">
+                        <img src="quadrangle.jpg" alt="School Quadrangle" class="article-image">
+                        <div class="article-text">
+                           <p>The school quadrangle is more than just a space—it's the beating heart of our school, where vibrant <strong>morning activities</strong> set the tone for the day ahead. Each morning, students gather here for brief interactions, group exercises, or school-wide assemblies, filling the space with excitement and energy. It’s a place where bonds are built, and school spirit comes to life as students, teachers, and staff unite.</p>
+                <p>Throughout the year, the quadrangle hosts a variety of events, from important <strong>school announcements</strong> to elaborate performances that showcase the talents and creativity of the student body. Whether it's a cultural performance, a talent show, or a school assembly, the quadrangle serves as the perfect stage, connecting the entire school community in moments of celebration and shared experience.</p>
+                <p>Besides being an event venue, the quadrangle is an everyday meeting place for students.
+                <p>Additionally, the quadrangle plays a vital role during special <strong>events and performances</strong>, such as sports fests and school fairs. Its spacious design accommodates large crowds, making it the perfect spot for school-wide gatherings. When the school hosts visiting speakers or external events, the quadrangle becomes the focal point, embodying the school’s pride and tradition.</p>
+                <p>The quadrangle’s role extends beyond just being a physical space—it is the heart of our school’s social life. It’s where new friendships are formed, memories are made, and where every student feels a sense of belonging. From sunrise to sunset, the quadrangle reflects the pulse of the school, evolving with each passing moment, yet always maintaining its central place in the fabric of student life.</p>
+
+                        </div>
+                    </div>
+                `,
+                image: 'quadrangle.jpg'
+            },
+            {
+                title: 'Article 2: The Covered Court: A Hub for School Activities',
+    content: `
+        <h2>The Covered Court(Kadasig Gym): A Hub for School Activities</h2>
+        <div class="article-content">
+            <img src="covered court.jpg" alt="Covered Court" class="article-image">
+            <div class="article-text">
+              <p>The covered court is essential for our school, serving as a lively space for <strong>P.E. subject</strong> 
+                classes and <strong>intramurals sports</strong>. It hosts various <strong>school activities</strong> 
+                and gatherings, allowing students to engage in sports and team-building. This versatile venue is always bustling with energy,
+                 whether it's students practicing their basketball skills or enjoying friendly volleyball matches.</p>
+                <p>The covered court is a place where school spirit thrives, echoing with cheers and applause during competitions and events. 
+                    With ample seating, it allows spectators to cheer on their classmates and foster 
+                    a sense of unity among students. The large, open space is perfect for hosting annual sports days and physical fitness programs,
+                     promoting a healthy lifestyle.</p>
+                <p>In addition to sports, the covered court serves as a venue for various extracurricular activities, such as dance rehearsals and 
+                    community outreach events. Its roof provides shelter from the elements, ensuring that events can continue rain or shine. 
+                    The vibrant atmosphere and supportive environment make it a favorite spot for students to unwind and socialize after classes. 
+                    Overall, the covered court is not just a facility; it is a cornerstone of our school culture, bringing students together 
+                    in both competition and camaraderie.</p>
+            </div>
+        </div>
+    `,
+    image: 'covered court.jpg'
+            },
+            {
+                        title: 'Article 3: The School Canteen: A Comforting Hub for Students',
+            content: `
+                <h2>The School Canteen: A Comforting Hub for Students</h2>
+                <div class="article-content">
+                    <img src="canteen.jpg" alt="School Canteen" class="article-image">
+                    <div class="article-text">
+                        <p>The school canteen serves as a <strong>comforting crowd</strong> for students during breaks, 
+                            offering a space to relax and enjoy their meals. With a wide <strong>variety of choices</strong>,
+                            students can find everything from healthy snacks to hearty meals.</p>
+                        <p>Not only is the food <strong>decent</strong> in quality, but the <strong>pricing</strong> is also very 
+                            <strong>affordable</strong>, making it accessible for everyone. Additionally, the canteen is designed to be 
+                            <strong>quick to access</strong>, allowing students to grab their meals and return to their activities without long waits.</p>
+                    </div>
+                </div>
+            `,
+            image: 'canteen.jpg'
+            },
+            {
+                title: 'Article 4: The School Oval: A Dynamic Space for Events',
+                content: `
+                    <h2>The School Oval: A Dynamic Space for Events</h2>
+                    <div class="article-content">
+                        <img src="oval.jpg" alt="School Oval" class="article-image">
+                        <div class="article-text">
+                            <p>The school oval serves as a <strong>comforting active crowd</strong> hub, where students gather to unwind and socialize.
+                                 This expansive area is perfect for hosting big dance presentation events, showcasing the talents of our
+                                  students and bringing the community together.</p>
+                            <p>With its design encouraging <strong>active and fit guests</strong>, the oval is also a popular spot for physical activities and sports.
+                                  Additionally, it serves as a general <strong>tambayan</strong> for students, providing a relaxed atmosphere to 
+                                 hang out with friends. 
+                                 The oval is known for hosting Danao City’s big events, such as concerts and festivities,
+                                  making it a vital part of both school and community life.</p>
+                        </div>
+                    </div>
+                `,
+                image: 'oval.jpg'
+            }
+        ];
+
+        function showArticle(articleIndex) {
+            const article = articles[articleIndex - 1];
+            const mainContent = document.getElementById('mainContent');
+            mainContent.innerHTML = `
+                <div class="article-container">
+                    ${article.content}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
