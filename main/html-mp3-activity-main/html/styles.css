@@ -1,0 +1,127 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fullscreen Centered Layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #340101, #610b0b);
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Titles */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #B0D4E3;
+}
+
+/* CD Animation */
+.cd-container {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cd {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Description */
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #D1DCE3;
+}
+
+/* Audio Player */
+audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Spinning Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Music Control Buttons - Positioned Above the Audio Player */
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px; /* Adds space between buttons and audio player */
+}
+
+/* Back & Forward Buttons */
+.back-button, .forward-button {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    background: url('2.png') no-repeat;
+    background-size: cover; /* Adjust if necessary */
+    border: none;
+    cursor: pointer;
+}
+
+/* Back Button */
+.back-button {
+    background-position: left;
+}
+
+/* Forward Button */
+.forward-button {
+    background-position: right;
+}
+
+/* Hover Effect */
+.back-button:hover, .forward-button:hover {
+    opacity: 0.8;
+}
+
+.back-button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#back-to-home {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#back-to-home:hover {
+    background-color: gray;
+}
