@@ -1,0 +1,124 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fullscreen Centered Layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #7d7d7d, #0f0f0f); /* Dark to bright red gradient for a bold look */
+    color: #dbdbdb;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(245, 244, 244, 0.6);
+}
+
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: linear-gradient(to bottom, #00698d, #c7d6d8);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: linear-gradient(to bottom, #f4f4f4, #07acc2);
+}
+
+/* CD Animation */
+.cd-container {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.cd {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: spin 5s linear infinite; 
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); /* Added stronger glow effect */
+}
+
+/* Description */
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #f8f5f5; 
+}
+
+/* Audio Player */
+audio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px; /* Rounded corners for better aesthetics */
+    background: #222;
+}
+
+/* Spinning Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Music Control Buttons - Positioned Above the Audio Player */
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+/* Back & Forward Buttons */
+.back-button, .forward-button {
+    width: 50px;
+    height: 50px;
+    background: url('pinguin.png') no-repeat center center; /* Updated sprite image for better visuals */
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover, .forward-button:hover {
+    opacity: 0.8;
+    transform: scale(1.1); /* Slight zoom effect for interaction feedback */
+}
+
+.back-button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#back-to-home {
+    background-color: #030303; /* Dark red to match the theme */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#back-to-home:hover {
+    background-color: #151515; /* Brighter red on hover for dynamic effect */
+}
