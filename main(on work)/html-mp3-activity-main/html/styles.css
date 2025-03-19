@@ -1,4 +1,3 @@
-/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +5,13 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* Fullscreen Centered Layout */
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom, #7d7d7d, #0f0f0f); /* Dark to bright red gradient for a bold look */
+    background: linear-gradient(to bottom, #0f0f0f, #6e340b);
     color: #dbdbdb;
 }
 
@@ -28,7 +27,10 @@ body {
 h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: linear-gradient(to bottom, #00698d, #c7d6d8);
+    background: linear-gradient(135deg, #f76a05, #fffffe, #6d6d6d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {

@@ -39,7 +39,7 @@ header h1 {
 }
 
 
-.menu-btn, .login-btn {
+.menu-btn {
     background-color: #ebf2eb;
     color: rgb(0, 0, 0);
     padding: 10px 20px;
@@ -55,11 +55,6 @@ header h1 {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-.menu-btn:hover, .login-btn:hover {
-    background-color: #303030;
-    color: white;
-}
 
 /* Dropdown Menu */
 .menu-container {
